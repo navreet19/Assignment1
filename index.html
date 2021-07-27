@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Lunch">
+
+<head>
+    <meta charset="utf-8">
+    <title>Check Lunch</title>
+</head>
+<body >
+    <div class="container" ng-controller="LunchCheckController">
+        <h1 style="text-align: center;">Lunch Checker</h1>
+        <div class="form-group">
+            <input id="lunch-menu" type="text" placeholder="Enter comma separated dishes for lunch" class="form-control" ng-model="dishes" style="width: 95%; margin: 20px;">
+        </div>
+        <!-- It does not consider an empty item, i.e., , , as an item towards to the count -->
+        <div class="form-group" style="text-align: center;">
+            <button class="btn btn-default" ng-click="checkLunch()">Check If Too Much</button>
+        </div>
+        <div ng-show="!empty && check" class="alert alert-success" style="color: green; text-align: center; margin: 10px;">{{message}}</div>
+        <div ng-show="empty" class="alert alert-danger" style="color: red; text-align: center; margin: 10px;">Please enter data first</div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
